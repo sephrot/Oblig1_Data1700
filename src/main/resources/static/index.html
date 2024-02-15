@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kino</title>
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Bestilling av kinobilletter</h1>
+<form id="fyllUt">
+    <label for="film">Velg film:</label>
+    <select name="film" id="film">
+        <option value="default">Velg film her:</option>
+        <option value="film1">Different movie</option>
+        <option value="film2">Interstellar</option>
+        <option value="film3">Pirates of the Caribbean</option>
+    </select>
+    <div id="velgFilm"></div><br>
+
+    <table>
+        <tr>
+            <td><label for="antall">Antall</label></td>
+            <td><input type="text" id="antall" style = "width: 20px;"></td>
+            <td><div id="skrivAntall"></div></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <br><td>Fornavn</td>
+            <td><input type="text" id="fNavn" value=""></td>
+            <td><div id="output0"></div></td>
+        </tr>
+        <tr>
+            <td>Etternavn</td>
+            <td><input type="text" id="eNavn" value=""></td>
+            <td><div id="output1"></div></td>
+        </tr>
+        <tr>
+            <td>Telefonnr</td>
+            <td><input type="text" id="tlfnr" value=""></td>
+            <td><div id="output2"></div></td>
+        </tr>
+        <tr>
+            <td>Epost</td>
+            <td><input type="text" id="epost" value=""></td>
+            <td><div id="output3"></div></td>
+        </tr>
+    </table>
+</form>
+
+<button id="kjopBillett" onclick="kjop1()">Kjøp billett</button>
+<h2>Alle billetter</h2>
+<div id="alleBilletter"></div>
+<button id="slettInfo" onclick="slett()">Slett alle billettene</button>
+</body>
+</html>
