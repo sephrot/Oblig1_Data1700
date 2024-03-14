@@ -1,57 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
-    <title>Kino</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Kunder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Bestilling av kinobilletter</h1>
-<form id="fyllUt">
-    <label for="film">Velg film:</label>
-    <select name="film" id="film">
-        <option value="default">Velg film her:</option>
-        <option value="film1">The Matrix</option>
-        <option value="film2">Interstellar</option>
-        <option value="film3">Pirates of the Caribbean</option>
-    </select>
-    <div id="velgFilm"></div><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Bestilling av kinobilletter</h1>
+            <form class="form" id="fyllUt">
+                <div class="form-group">
+                    <label for="film">Velg film:</label>
+                    <select name="film" id="film" class="form-control">
+                        <option value="default">Velg film her:</option>
+                        <option value="film1">The Matrix</option>
+                        <option value="film2">Interstellar</option>
+                        <option value="film3">Pirates of the Caribbean</option>
+                    </select>
+                    <div id="velgFilm"></div><br>
+                </div>
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td><label for="antall">Antall</label></td>
+                            <td><input type="text" id="antall" class="form-control"></td>
+                            <td><div id="skrivAntall"></div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <br><td>Fornavn</td>
+                            <td><input type="text" id="fNavn" value="" class="form-control"></td>
+                            <td><div id="output0"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Etternavn</td>
+                            <td><input type="text" id="eNavn" value="" class="form-control"></td>
+                            <td><div id="output1"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Telefonnr</td>
+                            <td><input type="text" id="tlfnr" value="" class="form-control"></td>
+                            <td><div id="output2"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Epost</td>
+                            <td><input type="text" id="epost" value="" class="form-control"></td>
+                            <td><div id="output3"></div></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+            <button onclick="regKunde()" class="btn btn-primary">Kjøp billett</button><br/>
+        </div>
+        <div class="col-md-8">
+            <h2>Alle billetter</h2>
+            <div id="alleBilletter" class ="table"></div>
+        </div>
+        <button id="slettInfo" class="btn btn-danger">Slett alle billettene</button>
+    </div>
+</div>
 
-    <table>
-        <tr>
-            <td><label for="antall">Antall</label></td>
-            <td><input type="text" id="antall" style = "width: 20px;"></td>
-            <td><div id="skrivAntall"></div></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <br><td>Fornavn</td>
-            <td><input type="text" id="fNavn" value=""></td>
-            <td><div id="output0"></div></td>
-        </tr>
-        <tr>
-            <td>Etternavn</td>
-            <td><input type="text" id="eNavn" value=""></td>
-            <td><div id="output1"></div></td>
-        </tr>
-        <tr>
-            <td>Telefonnr</td>
-            <td><input type="text" id="tlfnr" value=""></td>
-            <td><div id="output2"></div></td>
-        </tr>
-        <tr>
-            <td>Epost</td>
-            <td><input type="text" id="epost" value=""></td>
-            <td><div id="output3"></div></td>
-        </tr>
-    </table>
-</form>
-
-<button id="kjopBillett">Kjøp billett</button>
-<h2>Alle billetter</h2>
-<div id="alleBilletter"></div>
-<button id="slettInfo">Slett alle billettene</button>
 <script src="script.js"></script>
 </body>
 </html>

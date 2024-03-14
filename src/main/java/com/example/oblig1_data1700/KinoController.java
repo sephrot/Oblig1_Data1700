@@ -8,12 +8,12 @@ import java.util.ArrayList;
 @RestController
 public class KinoController {
     private ArrayList<KinoBillett> kinobilletter = new ArrayList<KinoBillett>();
-    @PostMapping("/opprett")
+    @PostMapping("/lagre")
     public void opprettListe(KinoBillett kinoBillett) {
         kinobilletter.add(kinoBillett);
     }
 
-    @GetMapping("/hentListe")
+    @GetMapping("/hentAlle")
     public ArrayList<KinoBillett> hentListe() {
         return kinobilletter;
     }

@@ -1,9 +1,9 @@
 let ut = "";
-$("#kjopBillett").click(function () {
+function regKunde() {
     let feilmeldinger = ["Må skrive noe i fornavnet", "Må skrive noe i etternavnet",
         "Må skrive noe inn i telefonnr", "Må skrive noe inn i epost", "Må skrive noe i antall"];
     let listesjekk = ["fNavn", "eNavn", "tlfnr", "epost"];
-    let film = $("#film");
+
     let fNavn = $("#fNavn").val();
     let eNavn = $("#eNavn").val();
     let tlfnr = $("#tlfnr").val();
@@ -37,7 +37,7 @@ $("#kjopBillett").click(function () {
                 }
             }
             if (harSkrevet) {
-                $.post("/opprett", billett, function(){
+                $.post("/lagre", billett, function(){
                     hentAlle();
                 });
             }
@@ -54,10 +54,10 @@ $("#kjopBillett").click(function () {
 
 
 
-});
+}
 
 function hentAlle() {
-    $.get( "/hentListe", function( data ) {
+    $.get( "/hentAlle", function( data ) {
         formaterData(data);
     });
 }
@@ -69,7 +69,6 @@ function formaterData(billetter){
         "</tr>";
     for (let b of billetter) {
         console.log(b);
-
         ut += "<tr>" +
             "<td>" + b.valgtFilm + "</td>" +
             "<td>" + b.antall + "</td>" +
@@ -85,6 +84,6 @@ function formaterData(billetter){
 $ ("#slettInfo").click(function (){
     $.get("/slett", function(){
         hentAlle();
-    });
-});
+    })
+})
 
