@@ -1,7 +1,7 @@
 # Oblig 2
 OsloMet brukernavn: s376619
 Github brukernavn: sephrot
-Github repo URL: https://github.com/sephrot/Oblig1_Data1700/tree/master
+Github repo URL: https://github.com/sephrot/Oblig2_Data1700
 Fullt navn: Ali Alder Sajed Hamid
 
 ## Bestilling av kinobilletter
